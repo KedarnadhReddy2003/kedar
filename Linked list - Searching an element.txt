@@ -1,0 +1,20 @@
+
+Linked list - Searching an element
+
+Program:
+
+mylist = []
+while True:
+    val = int(input())
+    if val == -1:
+        break
+    mylist.append(val)
+
+elem = int(input())
+
+if elem in mylist:
+    print(f"{elem} is present in the list")
+else:
+    print(f"{elem} not present in the list")
+
+
