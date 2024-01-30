@@ -1,0 +1,13 @@
+Linked list - find maximum element in linked list 1
+
+Program:
+
+mylist = []
+while True:
+    val = int(input())
+    if val == -1:
+        break
+    mylist.append(val)
+
+max_num = max(mylist)
+print(max_num)
