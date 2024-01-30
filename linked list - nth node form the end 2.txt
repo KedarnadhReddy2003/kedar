@@ -1,0 +1,49 @@
+Linked list - nth node from the end 2
+
+Program:
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
+
+    def find_nth_from_end(self, n):
+        if self.head is None:
+            return "There is no nth node in the list"
+        temp = self.head
+        length = 0
+        while temp:
+            length += 1
+            temp = temp.next
+        if n > length:
+            return "There is no nth node in the list"
+        temp = self.head
+        for i in range(length - n):
+            temp = temp.next
+        return f"{temp.data} is the nth node element in the list"
+
+linked_list = LinkedList()
+while True:
+    num = int(input())
+    if num < 0:
+        break
+    linked_list.append(num)
+
+n = int(input())
+print(linked_list.find_nth_from_end(n))
+
+
